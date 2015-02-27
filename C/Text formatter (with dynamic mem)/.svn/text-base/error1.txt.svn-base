@@ -1,4 +1,0 @@
-?fmt potato
-This file should throw an error because the
-word 'potato' is not a valid command for
-fmt.

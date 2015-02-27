@@ -1,3 +1,0 @@
-?mrgn -555
-This error should be thrown by the program.
-Margin can't be -555!
