@@ -1,0 +1,41 @@
+ERROR HANDLING:
+
+The following errors were handled within the formatter.py class:
+1. WrongTypeException
+Thrown when a command is given an inappropriate value, such as '?fmt' being
+followed by something that is not 'on' or 'off'. The program will raise
+the exception and inform the user of the line where the error has occurred.
+
+2. ValueError
+Thrown when the command given would go against given specifications, such
+as margin being set beyond the pagewidth-20 or to less than 0. In either
+case, a ValueError is raised and the user is informed of the line on which
+the violation has occurred. (Because these errors were actually present in
+the given test files, the code has been commented out so as to not interfere
+with the testing of the program.
+
+The following errors were handled within the sengfmt2.py script:
+3. EmptyFileException
+Thrown when the formatter is asked to look at a file that does not contain
+any text. In this case, the program will inform the user and exit.
+
+4. IndexError
+Thrown when the user doesn't give a file as input when the program is run
+from the command line. As per spec, the program then defaults to sys.stdin
+for input.
+
+5. OSError
+Also thrown when there is no file given as input, and therefore defaults
+to sys.stdin as well.
+
+The following are additional errors that could be resolved but are not implemented:
+6. TooManyCharsException
+Thrown when the length of consecutive characters to be formatted exceeds the allowed
+length of the line.
+
+7. FileTooLargeError
+Thrown when the program runs out of memory due to an exceedingly large input
+file.
+
+8. IOError
+Thrown when the input file is given but cannot be opened for any reason.

@@ -1,0 +1,50 @@
+# !/opt/rh/python33/root/usr/bin/python
+# for driver.py: replace for with print ''.join(lines)
+# Sengfmt2.py
+# Author: Carl Masri
+
+import sys
+import os
+from formatter import Formatter
+
+# ---------------------------------------------------------------- #
+
+def main():
+
+	# opens file with error handling
+	try:
+		filename = sys.argv[1]
+		
+		if os.stat(filename).st_size > 0:
+			pass
+		else:
+			raise EmptyFileException("The file you provided was empty, please provide a non-empty file to be formatted")
+		
+		file = open(sys.argv[1], 'r')
+			
+	# no file given, take input from stdin
+	except IndexError:
+		file = sys.stdin
+	except OSError:
+		file = sys.stdin
+	
+	# reads file into string list, each string is a line of text
+	with file:
+		input = file.readlines()
+	
+	# creates instance of formatter class
+	format = Formatter([line for line in input])
+	# retrieves formatted lines
+	lines = format.get_lines()
+	
+	# prints output lines
+	if (lines != []):
+		output = "".join(lines)
+		print (output.rstrip())
+	else:
+		return
+
+# ---------------------------------------------------------------- #
+
+if __name__ == '__main__':
+	main()
