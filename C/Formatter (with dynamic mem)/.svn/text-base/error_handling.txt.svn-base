@@ -1,0 +1,36 @@
+ERROR HANDLING:
+
+The following errors were HANDLED within the program:
+
+1. Incorrect ?fmt command
+Raised when fmt is given an inappropriate value, not 'on' or 'off'. The program will
+inform the user of the error and exit.
+
+2. Margin command out of spec
+Thrown when the margin command given would go against given specifications.
+Specifically, being set beyond the pagewidth-20 or to less than 0. In either
+case, an error message occurs and the user is informed of the innapropriate 
+value that margin has recieved. Because these errors were actually present in
+the given test files, the code has been commented out so as to not interfere
+with the testing of the program.
+
+3. No input file given
+Thrown when the user doesn't give a file as input when the program is run
+from the command line. As per specifications, the program then defaults to stdin
+for input.
+
+4. No input given from stdin
+An error message is displayed when there is no input recieved from stdin, and
+the user is prompted once again to add input from stdin.
+
+5. Unable to read file
+This error message is displayed when an input file is given, but the file
+cannot be read.
+
+6. Invalid input
+Thrown when the length of consecutive characters to be formatted exceeds the allowed
+length of the line.
+
+7. Memory allocation failure
+This error is the most commonly handled within the program, and is raised when
+any sort of dynamic memory allocation fails.
